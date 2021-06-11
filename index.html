@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+permalink: /
 ---
 		<!-- Banner -->
 			<section id="banner">
@@ -10,8 +11,8 @@ title: Home
 					<p></p>
 					-->
 					<ul class="actions">
-						<li><a href="{{ site.data.navigation.about.path }}" class="button big special">About Me</a></li>
-						<li><a href="{{ site.data.navigation.portfolio.path }}" class="button big alt">Projects</a></li>
+						<li><a href="{% link about.html %}" class="button big special">About Me</a></li>
+						<li><a href="{% link portfolio.html %}" class="button big alt">Projects</a></li>
 					</ul>
 				</div>
 			</section>

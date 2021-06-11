@@ -55,7 +55,7 @@
                       {% for item in site.data.navigation %}
                         {% if item.display %}
                             <li>
-                                <a href="{{ item.link }}" {% if page.url == item.link %}style=""{% endif %}>
+                                <a href="{% link item.link %}" {% if page.url == item.link %}style=""{% endif %}>
                                   {{ item.name }}
                                 </a>
                             </li>
@@ -76,7 +76,7 @@
 								<div class="6u">
 									<h3>Links</h3>
 									<ul class="alt">
-										<li><a href="{{ site.data.navigation.Credits.path }}">Credits</a></li>
+										<li><a href="{% link credits.html %}">Credits</a></li>
 										<li>
 											<a href="https://voip.ms/en/invite/MTE0NjY4" target="_blank">
 												Voip.ms Referral Link
