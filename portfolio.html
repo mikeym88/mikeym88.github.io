@@ -24,9 +24,9 @@ permalink: /portfolio/
 										<li>
 											{% if project.website %}
 												<a href="{{ project.website }}" target="_blank">{{ project.title }}</a>
-											{% else if project.github %}
+											{% elsif project.github %}
 												<a href="{{ project.github }}" target="_blank">{{ project.title }}</a>
-											{% else if project.youtube %}
+											{% elsif project.youtube %}
 												<a href="{{ project.youtube }}" target="_blank">{{ project.title }}</a>
 											{% else %}
 												{{ project.title }}
