@@ -39,7 +39,8 @@ permalink: /portfolio/
 					</div>
 					<hr class="major" />
 					{% for p in site.data.projects %}
-						{% if forloop.counter0|divisibleby:3 %}
+                        {% assign div3 = forloop.counter0|divisibleby:3 %}
+						{% if div3 %}
                         {% if forloop.counter0 > 0%}
 						</div>
 						{% endif %}
@@ -62,8 +63,8 @@ permalink: /portfolio/
 									<p>{{ p.description }}</p>
 								</section>
 							</div>
-
-						{% if forloop.counter0|divisibleby:3 == false and forloop.last %}
+                        {% assign end = forloop.counter0 | divisibleby:3 %}
+						{% if end == false and forloop.last %}
 						</div>
 						{% endif %}
 					{% endfor %}
