@@ -38,12 +38,11 @@ permalink: /portfolio/
 						</div>
 					</div>
 					<hr class="major" />
+                    {% assign counter = 0 %}
 					{% for p in site.data.projects %}
-                        {% assign div3 = forloop.counter0|divisibleby:3 %}
-						{% if div3 %}
-                        {% if forloop.counter0 > 0%}
-						</div>
-						{% endif %}
+                        {% assign newLine = counter | modulo: 3 %}
+                        {% if newLine == 0 %}
+                        {% if counter > 0%}</div>{% endif %}
 						<div class="row">
 						{% endif %}
 							<div class="4u">
@@ -60,13 +59,14 @@ permalink: /portfolio/
 											<li><a href="{{ p.youtube }}" class="icon fa-youtube" target="_blank"></a></li>
 										{% endif %}
 									</ul>
-									<p>{{ p.description }}</p>
+									<p>{{ counter }} {{forloop.last}} {{ p.description }}</p>
 								</section>
 							</div>
-                        {% assign end = forloop.counter0 | divisibleby:3 %}
-						{% if end == false and forloop.last %}
+                        {% assign listEnd = counter | modulo: 3 %}
+						{% if forloop.last and listEnd > 0 %}
 						</div>
 						{% endif %}
+                        {% assign counter = counter | plus: 1 %}
 					{% endfor %}
 				</div>
 			</section>
