@@ -52,9 +52,9 @@
 				<nav id="nav">
 					<ul>
                     
-                      {% for item in site.data.navigation %} {% if item.display %} {% assign url = item.path %}
+                      {% for item in site.data.navigation %} {% if item.display %} {% assign url = item.permalink %}
                             <li>
-                                <a href="{{ url | link }}" {% if page.url == item.path %}style=""{% endif %}>
+                                <a href="{{ url }}" {% if page.url == item.path %}style=""{% endif %}>
                                   {{ item.name }}
                                 </a>
                             </li>
