@@ -13,7 +13,7 @@
 			// Global.
 				global: {
 					range: '*',
-					href: static_content + "css/style.css",
+					href: "/css/style.css",
 					containers: 1400,
 					grid: {
 						gutters: {
