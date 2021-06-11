@@ -1,6 +1,6 @@
 defaults:
   - scope:
-      path: "assets/images"
+      path: "images"
     values:
       image: true
   - scope:
@@ -8,7 +8,7 @@ defaults:
     values:
       css: true
   - scope:
-      path: "assets/fonts"
+      path: "fonts"
     values:
       font: true
   - scope:
