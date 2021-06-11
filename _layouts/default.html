@@ -89,7 +89,7 @@
 							<ul class="icons">
                                 <ul class="alt">
 									{% for account in site.data.socialmedia %}
-                                    <li><a href="{{ account.url }}" class="icon fa-{{ account.name | downcase }}"><span class="label">{{ account.name}}</span></a></li>
+                                    <li><a href="{{ account.url }}" class="icon fa-{{ account.name | downcase }}" target="_blank"><span class="label">{{ account.name}}</span></a></li>
                                     {% endfor %}
 								</ul>
 							</ul>
