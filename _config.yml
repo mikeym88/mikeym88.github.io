@@ -4,7 +4,7 @@ defaults:
     values:
       image: true
   - scope:
-      path: "assets/css"
+      path: "css"
     values:
       css: true
   - scope:
