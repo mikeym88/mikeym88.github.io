@@ -53,7 +53,7 @@
                     
                       {% for item in site.data.navigation %} {% if item.display %} {% assign url = item.permalink %}
                             <li>
-                                <a href="{{ url }}" {% if page.url == item.path %}style=""{% endif %}>
+                                <a href="{{ url }}" {% if page.url == item.path %} style="color: #34A7F8; font-weight: bold;"{% endif %}>
                                   {{ item.name }}
                                 </a>
                             </li>
