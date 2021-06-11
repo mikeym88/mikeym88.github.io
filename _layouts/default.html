@@ -89,7 +89,10 @@
 						<div class="6u">
 							<h2>Connect</h2>
 							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                <ul class="alt">
+									{% for account in site.data.socialmedia %}<li><a href="{{ account.url }}" target="_blank">{{ account.name }}</a></li>
+                                    {% endfor %}
+								</ul>
 							</ul>
 						</div>
 					</div>
