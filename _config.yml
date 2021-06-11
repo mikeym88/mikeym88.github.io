@@ -1,1 +1,22 @@
-theme: jekyll-theme-minimal
+defaults:
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
+  - scope:
+      path: "assets/css"
+    values:
+      css: true
+  - scope:
+      path: "assets/fonts"
+    values:
+      font: true
+  - scope:
+      path: "assets/js"
+    values:
+      javascript: true
+  - scope:
+      path: "assets"
+    values:
+      base: true
+      

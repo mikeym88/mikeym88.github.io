@@ -1,0 +1,27 @@
+---
+layout: default
+title: Contact
+---
+		<!-- Main -->
+			<section id="main" class="wrapper style2">
+				<div class="container">
+					<div class="row">
+						<div class="8u">
+							<section>
+								<h2>Contact</h2>
+								<p>If you wish to get in contact, please email me at <em>mike at singlesourcemike.com</em> or through social media.</p>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<h3>Social Media Links</h3>
+								<ul class="alt">
+									{% for account in site.data.socialmedia %}
+										<li><a href="{{ account.url }}" target="_blank">{{ account.name }}</a></li>
+									{% endfor %}
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>

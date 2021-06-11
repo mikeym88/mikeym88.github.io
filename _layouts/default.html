@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+	Ion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<title>{{ page.title }} | Mike Martinescu</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+
+		<!-- JavaScript function to be used inside the other scripts -->
+		<script>
+			const static_content = "";
+		</script>
+		<!-- Google Search Console Verification -->
+		<meta name="google-site-verification" content="EsD5xFy9a9sC8anck9k2QYuSQJR06d7gMT3YDEedd6U" />
+		<!-- MS Bing Webmaster Tools Verification -->
+		<meta name="msvalidate.01" content="371A0DB9CEB5A5750E9F618069402A44" />
+
+		<!-- SEO Stuff -->
+		<meta content="Personal website of Mihnea &#8220;Mike&#8221; Martinescu." name="description" />
+
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+		<link rel="manifest" href="/assets/site.webmanifest">
+		<link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+        {% assign js_files = site.static_files | where: "javascript", true %}
+        {% for js in js_files %}
+          {% if js.name == "html5shiv.js" %}
+              <!--[if lte IE 8]><script src="{{ js.path }}"></script><![endif]-->
+          {% else %}
+              <script src="{{  js.path }}"></script>
+          {% endif %}
+        {% endfor %}
+		<noscript>
+            {% assign css_files = site.static_files | where: "css", true %}
+            {% for css in css_files %}
+              <link rel="stylesheet" href="{{ css.path }}" />
+            {% endfor %}
+		</noscript>
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header" class="skel-layers-fixed">
+                <!-- TODO update link with coffeescript -->
+				<h1><a href="{{ site.data.navigation.home.path }}">Mike Martinescu</a></h1>
+				<nav id="nav">
+					<ul>
+                    
+                      {% for item in site.data.navigation %}
+                        {% if item.display %}
+                            <li>
+                                <a href="{{ item.link }}" {% if page.url == item.link %}style=""{% endif %}>
+                                  {{ item.name }}
+                                </a>
+                            </li>
+                        {% endif %}
+                      {% endfor %}
+					</ul>
+				</nav>
+			</header>
+
+    {{ content }}
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row double">
+						<div class="6u">
+							<div class="row collapse-at-2">
+								<div class="6u">
+									<h3>Links</h3>
+									<ul class="alt">
+										<li><a href="{{ site.data.navigation.credits.path }}">Credits</a></li>
+										<li>
+											<a href="https://voip.ms/en/invite/MTE0NjY4" target="_blank">
+												Voip.ms Referral Link
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="6u">
+							<h2>Connect</h2>
+							<ul class="icons">
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<ul class="copyright">
+						<li>COPYRIGHT &copy; 2020 <a href="{{ site.data.navigation.credits.path }}">Mike Martinescu</a>. All rights reserved.</li>
+						<li>Design: <a href="https://templated.co" target="_blank">TEMPLATED</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+
+</html>

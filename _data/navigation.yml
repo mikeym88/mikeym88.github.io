@@ -1,0 +1,19 @@
+- name: Home
+  link: /
+  display: true
+- name: About
+  link: /about.html
+  display: true
+- name: Portfolio
+  link: /portfolio.html
+  display: true
+- name: Contact
+  link: /contact.html
+  display: true
+- name: Donation
+  link: /donation.html
+  display: false
+- name: Credits
+  link: /credits.html
+  display: false
+  
