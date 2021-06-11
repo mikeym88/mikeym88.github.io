@@ -52,16 +52,13 @@
 				<nav id="nav">
 					<ul>
                     
-                      {% for item in site.data.navigation %}
-                        {% if item.display %}
+                      {% for item in site.data.navigation %} {% if item.display %} {% assign url = item.path %}
                             <li>
-                                {% assign url = item.path %}
                                 <a href="{% link {{ url }} %}" {% if page.url == item.path %}style=""{% endif %}>
                                   {{ item.name }}
                                 </a>
                             </li>
-                        {% endif %}
-                      {% endfor %}
+                      {% endif %}  {% endfor %}
 					</ul>
 				</nav>
 			</header>
