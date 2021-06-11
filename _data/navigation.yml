@@ -16,4 +16,9 @@
 - name: Credits
   link: /credits.html
   display: false
-  
+- name: Donation-Success
+  link: /donation_success.html
+  display: false
+- name: Donation-Unsuccessful
+  link: /donation_unsuccessful.html
+  display: false
