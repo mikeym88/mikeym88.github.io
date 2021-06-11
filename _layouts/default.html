@@ -66,42 +66,55 @@
     {{ content }}
 			
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<div class="row double">
-						<div class="6u">
-							<div class="row collapse-at-2">
-								<div class="6u">
-									<h3>Links</h3>
-									<ul class="alt">
-										<li><a href="{% link credits.html %}">Credits</a></li>
-										<li>
-											<a href="https://voip.ms/en/invite/MTE0NjY4" target="_blank">
-												Voip.ms Referral Link
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="6u">
-							<h2>Connect</h2>
-							<ul class="icons">
-                                {% for account in site.data.socialmedia %}
-                                <li><a href="{{ account.url }}" class="icon fa-{{ account.name | downcase }}" target="_blank"><span class="label">{{ account.name}}</span></a></li>
-                                {% endfor %}
-							</ul>
-						</div>
-					</div>
-					<ul class="copyright">
-						<li>COPYRIGHT &copy; 2021 <a href="{% link credits.html %}">Mike Martinescu</a>. All rights reserved.</li>
-						<li>Design: <a href="https://templated.co" target="_blank">TEMPLATED</a></li>
-                        {% assign version = site.github.build_revision | slice: 0,7 %}
-                        <li>Version: {{ version }}</li>
-					</ul>
-				</div>
-			</footer>
+        <footer id="footer">
+            <div class="container">
+                <div class="row double">
+                    <div class="6u">
+                        <div class="row collapse-at-2">
+                            <div class="6u">
+                                <h3>Links</h3>
+                                <ul class="alt">
+                                    <li><a href="{% link credits.html %}">Credits</a></li>
+                                    <li>
+                                        <a href="https://voip.ms/en/invite/MTE0NjY4" target="_blank">
+                                            Voip.ms Referral Link
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="6u">
+                        <h2>Connect</h2>
+                        <ul class="icons">
+                            {% for account in site.data.socialmedia %}
+                            <li><a href="{{ account.url }}" class="icon fa-{{ account.name | downcase }}" target="_blank"><span class="label">{{ account.name}}</span></a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <ul class="copyright">
+                    <li>COPYRIGHT &copy; 2021 <a href="{% link credits.html %}">Mike Martinescu</a>. All rights reserved.</li>
+                    <li>Design: <a href="https://templated.co" target="_blank">TEMPLATED</a></li>
+                    {% assign version = site.github.build_revision | slice: 0,7 %}
+                    <li>Version: {{ version }}</li>
+                </ul>
+            </div>
+        </footer>
+        <!-- Google Analytics -->
+        <script>
 
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-9862189-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
 	</body>
 
 </html>
