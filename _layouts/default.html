@@ -100,7 +100,8 @@
 					<ul class="copyright">
 						<li>COPYRIGHT &copy; 2021 <a href="{% link credits.html %}">Mike Martinescu</a>. All rights reserved.</li>
 						<li>Design: <a href="https://templated.co" target="_blank">TEMPLATED</a></li>
-                        <li>Version: {{ site.github.build_revision }}</li>
+                        {% assign version = site.github.build_revision %}
+                        <li>Version: {{ version.substr(0, 7) }}</li>
 					</ul>
 				</div>
 			</footer>
