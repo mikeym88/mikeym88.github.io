@@ -1,24 +1,24 @@
 - name: Home
-  path: /
+  path: index.html
   display: true
 - name: About
-  path: /about.html
+  path: about.html
   display: true
 - name: Portfolio
-  path: /portfolio.html
+  path: portfolio.html
   display: true
 - name: Contact
-  path: /contact.html
+  path: contact.html
   display: true
 - name: Donation
-  path: /donation.html
+  path: donation.html
   display: false
 - name: Credits
-  path: /credits.html
+  path: credits.html
   display: false
 - name: Donation-Success
-  path: /donation_success.html
+  path: donation_success.html
   display: false
 - name: Donation-Unsuccessful
-  path: /donation_unsuccessful.html
+  path: donation_unsuccessful.html
   display: false
