@@ -54,7 +54,7 @@
                     
                       {% for item in site.data.navigation %} {% if item.display %} {% assign url = item.path %}
                             <li>
-                                <a href="{% link {{ url }} %}" {% if page.url == item.path %}style=""{% endif %}>
+                                <a href="{{ url | link }}" {% if page.url == item.path %}style=""{% endif %}>
                                   {{ item.name }}
                                 </a>
                             </li>
