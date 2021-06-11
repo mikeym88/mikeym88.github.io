@@ -48,7 +48,7 @@
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
                 <!-- TODO update link with coffeescript -->
-				<h1><a href="{{ site.data.navigation.home.path }}">Mike Martinescu</a></h1>
+				<h1><a href="{{ site.data.navigation.Home.path }}">Mike Martinescu</a></h1>
 				<nav id="nav">
 					<ul>
                     
@@ -76,7 +76,7 @@
 								<div class="6u">
 									<h3>Links</h3>
 									<ul class="alt">
-										<li><a href="{{ site.data.navigation.credits.path }}">Credits</a></li>
+										<li><a href="{{ site.data.navigation.Credits.path }}">Credits</a></li>
 										<li>
 											<a href="https://voip.ms/en/invite/MTE0NjY4" target="_blank">
 												Voip.ms Referral Link
@@ -90,14 +90,15 @@
 							<h2>Connect</h2>
 							<ul class="icons">
                                 <ul class="alt">
-									{% for account in site.data.socialmedia %}<li><a href="{{ account.url }}" target="_blank">{{ account.name }}</a></li>
+									{% for account in site.data.socialmedia %}
+                                    <li><a href="#" class="icon fa-{{ account.name | downcase }}"><span class="label">Twitter</span></a></li>
                                     {% endfor %}
 								</ul>
 							</ul>
 						</div>
 					</div>
 					<ul class="copyright">
-						<li>COPYRIGHT &copy; 2020 <a href="{{ site.data.navigation.credits.path }}">Mike Martinescu</a>. All rights reserved.</li>
+						<li>COPYRIGHT &copy; 2020 <a href="{{ site.data.navigation.Credits.path }}">Mike Martinescu</a>. All rights reserved.</li>
 						<li>Design: <a href="https://templated.co" target="_blank">TEMPLATED</a></li>
 					</ul>
 				</div>
