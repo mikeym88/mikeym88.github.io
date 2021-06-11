@@ -1,0 +1,8 @@
+# Group
+User-agent: *
+Allow: /
+Disallow: /donation-successful/
+Disallow: /donation-unsuccessful/
+Disallow: /donation/
+
+Sitemap: /sitemap.xml
