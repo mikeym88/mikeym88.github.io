@@ -1,3 +1,5 @@
+repository: mikeym88/mikeym88.github.io
+
 defaults:
   - scope:
       path: "images"
