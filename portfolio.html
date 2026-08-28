@@ -2,6 +2,10 @@
 layout: default
 title: Portfolio
 permalink: /portfolio/
+project_types:
+  - Work
+  - Personal
+  - University
 ---
 		<!-- Main -->
 			<section id="main" class="wrapper style2">
@@ -38,8 +42,7 @@ permalink: /portfolio/
 						{% endif %}
 					</div>
 
-				{% set project_types_arr = ["Work", "Personal", "University"] %}
-				{% for pt in project_types_arr %}
+				{% for pt in page.project_types %}
 					<hr class="major" />
 
 					<div class="row">
