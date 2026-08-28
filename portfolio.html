@@ -2,50 +2,28 @@
 layout: default
 title: Portfolio
 permalink: /portfolio/
+project_types:
+  - Work
+  - Personal
+  - University
 ---
 		<!-- Main -->
 			<section id="main" class="wrapper style2">
 				<div class="container">
-					<div class="row">
-						<div class="16u">
-							<section>
-								<h2>Projects</h2>
-								<p>You may view my work experience on my <a href="https://ca.linkedin.com/in/mmartinescu" target="_blank">LinkedIn profile</a>. I have worked on
-									several software projects, some of which can be found on my <a href="https://github.com/mikeym88/" target="_blank">GitHub page</a>. </p>
-							</section>
-						</div>
-						{% if false %}
-						<div class="4u">
-							<section>
-								<h3>Projects</h3>
-								<ul class="alt">
-									{% for project in site.data.projects %}
-										<li>
-											{% if project.website %}
-												<a href="{{ project.website }}" target="_blank">{{ project.title }}</a>
-											{% elsif project.github %}
-												<a href="{{ project.github }}" target="_blank">{{ project.title }}</a>
-											{% elsif project.youtube %}
-												<a href="{{ project.youtube }}" target="_blank">{{ project.title }}</a>
-											{% else %}
-												{{ project.title }}
-											{% endif %}
-										</li>
-									{% endfor %}
-								</ul>
-							</section>
-						</div>
-						{% endif %}
-					</div>
+					<section>
+						<h2>Projects</h2>
+						<p>You may view my work experience on my <a href="https://ca.linkedin.com/in/mmartinescu" target="_blank">LinkedIn profile</a>. I have worked on
+							several software projects, some of which can be found on my <a href="https://github.com/mikeym88/" target="_blank">GitHub page</a>.</p>
+					</section>
 
 				{% for pt in page.project_types %}
 					<hr class="major" />
-
-					<div class="row">
-						<h2>Work Projects</h2>
-					</div>
+					<section>
+						<h2>{{ pt }} Projects</h2>
+					</section>
                     {% assign counter = 0 %}
-					{% for p in site.data.projects if p.type == "Work" %}
+					{% assign projects_of_specified_type = site.data.projects | where: "project_type", pt %}
+					{% for p in projects_of_specified_type  %}
                         {% assign newLine = counter | modulo: 3 %}
                         {% if newLine == 0 %}
                         {% if counter > 0%}</div>{% endif %}
@@ -65,6 +43,9 @@ permalink: /portfolio/
 											<li><a href="{{ p.youtube }}" class="icon fa-youtube" target="_blank"></a></li>
 										{% endif %}
 									</ul>
+									{% if p.image %}
+										<div class="image fit"><img src="/images/projects/{{ p.image }}" alt="{{ p.title }} Image" /></div>
+									{% endif %}
 									<p>{{ p.description }}</p>
 								</section>
 							</div>
@@ -74,79 +55,6 @@ permalink: /portfolio/
 						{% endif %}
                         {% assign counter = counter | plus: 1 %}
 					{% endfor %}
-
-					<hr class="major" />
-
-					<div class="row">
-						<h2>Personal Projects</h2>
-					</div>
-                    {% assign counter = 0 %}
-					{% for p in site.data.projects if p.type == "Personal" %}
-                        {% assign newLine = counter | modulo: 3 %}
-                        {% if newLine == 0 %}
-                        {% if counter > 0%}</div>{% endif %}
-						<div class="row">
-						{% endif %}
-							<div class="4u">
-								<section class="special">
-									<h3>{{ p.title }}</h3>
-									<ul class="icons">
-										{% if p.website %}
-											<li><a href="{{ p.website }}" class="icon fa-link" target="_blank"></a></li>
-										{% endif %}
-										{% if p.github %}
-											<li><a href="{{ p.github }}" class="icon fa-github" target="_blank"></a></li>
-										{% endif %}
-										{% if p.youtube %}
-											<li><a href="{{ p.youtube }}" class="icon fa-youtube" target="_blank"></a></li>
-										{% endif %}
-									</ul>
-									<p>{{ p.description }}</p>
-								</section>
-							</div>
-                        {% assign listEnd = counter | modulo: 3 %}
-						{% if forloop.last and listEnd > 0 %}
-						</div>
-						{% endif %}
-                        {% assign counter = counter | plus: 1 %}
-					{% endfor %}
-
-					<hr class="major" />
-
-					<div class="row">
-						<h2>University Projects</h2>
-					</div>
-                    {% assign counter = 0 %}
-					{% for p in site.data.projects if p.type == "University" %}
-                        {% assign newLine = counter | modulo: 3 %}
-                        {% if newLine == 0 %}
-                        {% if counter > 0%}</div>{% endif %}
-						<div class="row">
-						{% endif %}
-							<div class="4u">
-								<section class="special">
-									<h3>{{ p.title }}</h3>
-									<ul class="icons">
-										{% if p.website %}
-											<li><a href="{{ p.website }}" class="icon fa-link" target="_blank"></a></li>
-										{% endif %}
-										{% if p.github %}
-											<li><a href="{{ p.github }}" class="icon fa-github" target="_blank"></a></li>
-										{% endif %}
-										{% if p.youtube %}
-											<li><a href="{{ p.youtube }}" class="icon fa-youtube" target="_blank"></a></li>
-										{% endif %}
-									</ul>
-									<p>{{ p.description }}</p>
-								</section>
-							</div>
-                        {% assign listEnd = counter | modulo: 3 %}
-						{% if forloop.last and listEnd > 0 %}
-						</div>
-						{% endif %}
-                        {% assign counter = counter | plus: 1 %}
-					{% endfor %}
-
-
+				{% endfor %}
 				</div>
 			</section>
