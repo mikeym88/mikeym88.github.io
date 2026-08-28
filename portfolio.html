@@ -44,9 +44,7 @@ project_types:
 
 				{% for pt in page.project_types %}
 					<hr class="major" />
-					<div class="row">
-						<h2>{{ pt }} Projects</h2>
-					</div>
+					<h2>{{ pt }} Projects</h2>
                     {% assign counter = 0 %}
 					{% assign projects_of_specified_type = site.data.projects | where: "project_type", pt %}
 					{% for p in projects_of_specified_type  %}
