@@ -43,6 +43,9 @@ project_types:
 											<li><a href="{{ p.youtube }}" class="icon fa-youtube" target="_blank"></a></li>
 										{% endif %}
 									</ul>
+									{% if p.image %}
+										<div class="image fit"><img src="/images/projects/{{ p.image }}" alt="{{ p.title }} Image" /></div>
+									{% endif %}
 									<p>{{ p.description }}</p>
 								</section>
 							</div>
