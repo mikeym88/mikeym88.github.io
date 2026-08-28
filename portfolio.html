@@ -44,6 +44,9 @@ project_types:
 
 				{% for pt in page.project_types %}
 					<hr class="major" />
+					<div class="row">
+						<h2>{{ pt }} Projects</h2>
+					</div>
                     {% assign counter = 0 %}
 					{% for p in site.data.projects  %}
 						{% if p.project_type == pt %} {% continue %} {% endif %}
@@ -54,7 +57,7 @@ project_types:
 						{% endif %}
 							<div class="4u">
 								<section class="special">
-									<h3>{{ p.title }} ({{ p.project_type }} {{ pt }})</h3>
+									<h3>{{ p.title }}</h3>
 									<ul class="icons">
 										{% if p.website %}
 											<li><a href="{{ p.website }}" class="icon fa-link" target="_blank"></a></li>
