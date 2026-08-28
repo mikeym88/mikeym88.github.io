@@ -48,8 +48,8 @@ project_types:
 						<h2>{{ pt }} Projects</h2>
 					</div>
                     {% assign counter = 0 %}
-					{% for p in site.data.projects  %}
-						{% if p.project_type == pt %} {% continue %} {% endif %}
+					{% assign projects_of_specified_type = site.data.projects | where: "project_type", pt %}
+					{% for p in projects_of_specified_type  %}
                         {% assign newLine = counter | modulo: 3 %}
                         {% if newLine == 0 %}
                         {% if counter > 0%}</div>{% endif %}
