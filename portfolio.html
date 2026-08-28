@@ -38,15 +38,14 @@ permalink: /portfolio/
 						{% endif %}
 					</div>
 
-				{% assign project_types_arr = ["Work", "Personal", "University"] %}
-				{% for pt in project_types_arr %}
+				{% for pt in page.project_types %}
 					<hr class="major" />
 
 					<div class="row">
-						<h2>{{ pt }} Projects</h2>
+						<h2>Work Projects</h2>
 					</div>
                     {% assign counter = 0 %}
-					{% for p in site.data.projects if p.type == pt %}
+					{% for p in site.data.projects if p.type == "Work" %}
                         {% assign newLine = counter | modulo: 3 %}
                         {% if newLine == 0 %}
                         {% if counter > 0%}</div>{% endif %}
@@ -75,8 +74,79 @@ permalink: /portfolio/
 						{% endif %}
                         {% assign counter = counter | plus: 1 %}
 					{% endfor %}
-				{% endfor %}
 
 					<hr class="major" />
+
+					<div class="row">
+						<h2>Personal Projects</h2>
+					</div>
+                    {% assign counter = 0 %}
+					{% for p in site.data.projects if p.type == "Personal" %}
+                        {% assign newLine = counter | modulo: 3 %}
+                        {% if newLine == 0 %}
+                        {% if counter > 0%}</div>{% endif %}
+						<div class="row">
+						{% endif %}
+							<div class="4u">
+								<section class="special">
+									<h3>{{ p.title }}</h3>
+									<ul class="icons">
+										{% if p.website %}
+											<li><a href="{{ p.website }}" class="icon fa-link" target="_blank"></a></li>
+										{% endif %}
+										{% if p.github %}
+											<li><a href="{{ p.github }}" class="icon fa-github" target="_blank"></a></li>
+										{% endif %}
+										{% if p.youtube %}
+											<li><a href="{{ p.youtube }}" class="icon fa-youtube" target="_blank"></a></li>
+										{% endif %}
+									</ul>
+									<p>{{ p.description }}</p>
+								</section>
+							</div>
+                        {% assign listEnd = counter | modulo: 3 %}
+						{% if forloop.last and listEnd > 0 %}
+						</div>
+						{% endif %}
+                        {% assign counter = counter | plus: 1 %}
+					{% endfor %}
+
+					<hr class="major" />
+
+					<div class="row">
+						<h2>University Projects</h2>
+					</div>
+                    {% assign counter = 0 %}
+					{% for p in site.data.projects if p.type == "University" %}
+                        {% assign newLine = counter | modulo: 3 %}
+                        {% if newLine == 0 %}
+                        {% if counter > 0%}</div>{% endif %}
+						<div class="row">
+						{% endif %}
+							<div class="4u">
+								<section class="special">
+									<h3>{{ p.title }}</h3>
+									<ul class="icons">
+										{% if p.website %}
+											<li><a href="{{ p.website }}" class="icon fa-link" target="_blank"></a></li>
+										{% endif %}
+										{% if p.github %}
+											<li><a href="{{ p.github }}" class="icon fa-github" target="_blank"></a></li>
+										{% endif %}
+										{% if p.youtube %}
+											<li><a href="{{ p.youtube }}" class="icon fa-youtube" target="_blank"></a></li>
+										{% endif %}
+									</ul>
+									<p>{{ p.description }}</p>
+								</section>
+							</div>
+                        {% assign listEnd = counter | modulo: 3 %}
+						{% if forloop.last and listEnd > 0 %}
+						</div>
+						{% endif %}
+                        {% assign counter = counter | plus: 1 %}
+					{% endfor %}
+
+
 				</div>
 			</section>
