@@ -10,41 +10,17 @@ project_types:
 		<!-- Main -->
 			<section id="main" class="wrapper style2">
 				<div class="container">
-					<div class="row">
-						<div class="8u">
-							<section>
-								<h2>Projects</h2>
-								<p>You may view my work experience on my <a href="https://ca.linkedin.com/in/mmartinescu" target="_blank">LinkedIn profile</a>. I have worked on
-									several software projects, some of which can be found on my <a href="https://github.com/mikeym88/" target="_blank">GitHub page</a>. I have also worked on other types of projects (as seen in the sidebar), including a short documentary. </p>
-
-								<p>I have previously worked as a Technical Writer. If you wish to see a portfolio of my technical writing, please <a href="{% link contact.html %}">contact me</a>.</p>
-							</section>
-						</div>
-						<div class="4u">
-							<section>
-								<h3>Projects</h3>
-								<ul class="alt">
-									{% for project in site.data.projects %}
-										<li>
-											{% if project.website %}
-												<a href="{{ project.website }}" target="_blank">{{ project.title }}</a>
-											{% elsif project.github %}
-												<a href="{{ project.github }}" target="_blank">{{ project.title }}</a>
-											{% elsif project.youtube %}
-												<a href="{{ project.youtube }}" target="_blank">{{ project.title }}</a>
-											{% else %}
-												{{ project.title }}
-											{% endif %}
-										</li>
-									{% endfor %}
-								</ul>
-							</section>
-						</div>
-					</div>
+					<section>
+						<h2>Projects</h2>
+						<p>You may view my work experience on my <a href="https://ca.linkedin.com/in/mmartinescu" target="_blank">LinkedIn profile</a>. I have worked on
+							several software projects, some of which can be found on my <a href="https://github.com/mikeym88/" target="_blank">GitHub page</a>.</p>
+					</section>
 
 				{% for pt in page.project_types %}
 					<hr class="major" />
-					<h2>{{ pt }} Projects</h2>
+					<section>
+						<h2>{{ pt }} Projects</h2>
+					</section>
                     {% assign counter = 0 %}
 					{% assign projects_of_specified_type = site.data.projects | where: "project_type", pt %}
 					{% for p in projects_of_specified_type  %}
