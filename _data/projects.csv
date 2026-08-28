@@ -1,8 +1,8 @@
 title,project_type,image,description,website,github,youtube
 PestLocations.com,Personal,pestlocations.png,Developed a website to help people find out if an apartment building or hotel has a bug infestation problem.,https://pestlocations.com/,,
-CAD Design &amp; 3D Printing,Personal,cad.svg,Design and/or 3D print various objects.,,https://github.com/mikeym88/3D-Printing-Projects,
-Photogrammetry Workflow Automation,Work,photogrammetry.svg,Automated a Agisoft Metashape photogrammetry process using Python and Metashape's network processing capabilities.,,,
-Satellite and Orbital Debris Detection in Optical Images using ML,University,satellite_light.svg,This is the capstone project that I worked on during my final year of university (CPEN 491: Capstone Project course).,,,https://youtu.be/7FtuzrnEgks
+CAD Design &amp; 3D Printing,Personal,3D_printing.png,Design and/or 3D print various objects.,,https://github.com/mikeym88/3D-Printing-Projects,
+Photogrammetry Workflow Automation,Work,,Automated a Agisoft Metashape photogrammetry process using Python and Metashape's network processing capabilities.,,,
+Satellite and Orbital Debris Detection in Optical Images using ML,University,,This is the capstone project that I worked on during my final year of university (CPEN 491: Capstone Project course).,,,https://youtu.be/7FtuzrnEgks
 A New Way to Handle Phone Scams,University,,A software project that aimed to provide a software solution to handle phone scams.,,,https://www.youtube.com/watch?v=_BASBqFtXvQ
 Formula UBC 2019/2020 Engineering Team,University,formula.png,"Worked on various projects for the Formula UBC engineering team, inlcuding embedded software using STM32 chips and the PlatformIO framework.",,,
 David Forgets web series website,Personal,david_forgets.png,Created a website for the David Forgets web series. I collaborated with the creators entirely remotely. I got offered to work on this project through Twitter!,,,
