@@ -11,14 +11,15 @@ project_types:
 			<section id="main" class="wrapper style2">
 				<div class="container">
 					<div class="row">
-						<div class="16u">
+						<div class="8u">
 							<section>
 								<h2>Projects</h2>
 								<p>You may view my work experience on my <a href="https://ca.linkedin.com/in/mmartinescu" target="_blank">LinkedIn profile</a>. I have worked on
-									several software projects, some of which can be found on my <a href="https://github.com/mikeym88/" target="_blank">GitHub page</a>. </p>
+									several software projects, some of which can be found on my <a href="https://github.com/mikeym88/" target="_blank">GitHub page</a>. I have also worked on other types of projects (as seen in the sidebar), including a short documentary. </p>
+
+								<p>I have previously worked as a Technical Writer. If you wish to see a portfolio of my technical writing, please <a href="{% link contact.html %}">contact me</a>.</p>
 							</section>
 						</div>
-						{% if false %}
 						<div class="4u">
 							<section>
 								<h3>Projects</h3>
@@ -39,16 +40,13 @@ project_types:
 								</ul>
 							</section>
 						</div>
-						{% endif %}
 					</div>
 
 				{% for pt in page.project_types %}
 					<hr class="major" />
-					<div class="row">
-						<h2>{{ pt }} Projects</h2>
-					</div>
                     {% assign counter = 0 %}
-					{% for p in site.data.projects if p.project_type == pt %}
+					{% for p in site.data.projects  %}
+						{% if p.project_type == pt %} {% continue %} {% endif %}
                         {% assign newLine = counter | modulo: 3 %}
                         {% if newLine == 0 %}
                         {% if counter > 0%}</div>{% endif %}
@@ -56,7 +54,7 @@ project_types:
 						{% endif %}
 							<div class="4u">
 								<section class="special">
-									<h3>{{ p.title }}</h3>
+									<h3>{{ p.title }} ({{ p.project_type }} {{ pt }})</h3>
 									<ul class="icons">
 										{% if p.website %}
 											<li><a href="{{ p.website }}" class="icon fa-link" target="_blank"></a></li>
@@ -78,7 +76,5 @@ project_types:
                         {% assign counter = counter | plus: 1 %}
 					{% endfor %}
 				{% endfor %}
-
-					<hr class="major" />
 				</div>
 			</section>
